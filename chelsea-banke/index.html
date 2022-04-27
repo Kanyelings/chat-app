@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web socket chat</title>
+    </head>
+    <style>
+        body{
+            font-family: sans-serif;;
+        }
+        #chat{
+            width: 100%;
+            height: 70vh;
+            border: 1px solid black;
+            border-bottom: none;
+            /* display: flex; */
+            overflow-y: scroll;
+        }
+        #message-input{
+            width: 80%;
+            resize: none;
+        }
+        section{
+            position: relative;
+            width: 100%;
+        }
+        input{
+            position: absolute;
+            top: 1px;
+            right: -2px;
+            width: 19%;
+            height: 25.5%;
+        }
+        #stop-button{
+           top: 28%;
+           /* bottom: 0px; */
+        }
+        article{
+            width: 50%;
+            margin: auto;
+        }
+        #message-area{
+            margin-top: 5px;
+        }
+        .sent, .recieved{
+            /* width: 60%;
+            height: 100px; */
+            background-color: rgb(223, 223, 223);
+            border-bottom: 1px solid black;
+            display: block;
+            border-radius: 5px;
+            margin: 12px;
+            max-width: 60%;
+            padding: 5px;
+            word-wrap: break-word;
+            min-width: 45%;
+        }
+        .sent{
+            float: right;
+        }
+        .recieved{
+            float: left;   
+        }
+        .carrier{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 10px;
+        }
+        #status-label{
+            float: right;
+        }
+        @media screen and (max-width: 800px){
+            article{
+                width: 100%;
+            }
+        }
+    </style>
+    <body>
+        <article>
+            <h1>Web Socket Chat</h1>
+            <section>
+                <label id="status-label">Status</label>
+                <label id="client-id">id: </label>
+                <div id="chat"></div>
+            </section>
+            <section id="message-area">
+                <textarea type="text" id="message-input" rows="3" placeholder="Compose message"></textarea>
+                <input type="button" id="send-button" value="send"/><br>
+                <input type="button" id="stop-button" value="close"/>
+                <br><br>
+            </section>
+            <script src="/index.js"></script>
+        </article>
+    </body>
+</html>
