@@ -1,2 +1,2 @@
 # chat-app
-simple chat app using web suckets
+simple chat app using web sockets
